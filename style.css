@@ -1,0 +1,125 @@
+* {
+    outline: 0;
+}
+
+div {
+  background-color: #F0F0F0;
+  border-radius: 6px;
+  margin: 12px;
+  padding: 12px;
+}
+
+.white-div {
+  background-color: #FFFFFF;
+}
+
+h1 {
+  font-family: "Roboto";
+  line-height: 0%;
+}
+
+p {
+  font-family: "Roboto";
+}
+
+.red-button {
+  --light-color: #EF5350;
+  --dark-color: #F44336;
+  --text-color: #FFFFFF;
+}
+
+.orange-button {
+  --light-color: #FFA726;
+  --dark-color: #FF9800;
+  --text-color: #FFFFFF;
+}
+
+.yellow-button {
+  --light-color: #FFCA28;
+  --dark-color: #FFC107;
+  --text-color: #FFFFFF;
+}
+
+.green-button {
+  --light-color: #66BB6A;
+  --dark-color: #4CAF50;
+  --text-color: #FFFFFF;
+}
+
+.blue-button {
+  --light-color: #1E88E5;
+  --dark-color: #1976D2;
+  --text-color: #FFFFFF;
+}
+
+.purple-button {
+  --light-color: #AB47BC;
+  --dark-color: #9C27B0;
+  --text-color: #FFFFFF;
+}
+
+.gray-button {
+  --light-color: #9E9E9E;
+  --dark-color: #8E8E8E;
+  --text-color: #FFFFFF;
+}
+
+button {
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  background-color: var(--light-color);
+  border: 2px solid var(--dark-color);
+  border-radius: 6px;
+  color: var(--text-color);
+  font-family: "Roboto";
+}
+
+button:hover {
+  background-color: var(--dark-color);
+}
+
+button.selected {
+  background-color: var(--dark-color);
+}
+
+button:active {
+  background-color: var(--light-color);
+  border-color: var(--light-color);
+}
+
+.connected-buttons button {
+  float: left;
+}
+
+.connected-buttons button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+.connected-buttons button:last-child {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 6px;
+}
+
+.connected-buttons button:first-child {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 0px;
+}
+
+.connected-buttons button:not(:last-child):not(:first-child) {
+  border-radius: 0px;
+}
+
+/* Clear floats (clearfix hack) */
+.connected-buttons:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.clearfix {
+    overflow: visible;
+}

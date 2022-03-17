@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Idle Game</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+<div id="mainDiv">
+  <h1 id="mainDiv_balance">$0</h1>
+  <p id="mainDiv_perClick">$1 per click</p>
+  <p id="mainDiv_perSecond">$0 per second</p>
+  <button id="mainDiv_moneyButton" class="blue-button">More Money!</button>
+  <button id="mainDiv_upgradeCount" class="orange-button">Buy x1</button>
+</div>
+<div id="upgradesDiv" style="overflow-x: hidden; overflow-y: scroll; height: 100px;">
+</div>
+<!
+  bonus types:
+  self-mult: gives upgrade a personal multiplier
+  click-mult: gives a global per-click multiplier
+  second-mult: gives a global per-second multiplier
+  global-cost: gives a global cost reduction
+  self-cost: gives upgrade a local cost reduction
+>
+<template type="upgrades">
+  {
+    "upgrades": [
+      {
+        "name": "Basic Manual Clicker",
+        "bonusType": "click",
+        "bonus": "0.1",
+        "cost": "5",
+        "costMult": 1.005,
+        "upgrades": [
+          {
+            "name": "Multi-Fingers",
+            "level": 0,
+            "levels": [
+              {
+                "desc": "You realize that if you use multiple fingers for clicking, you can get more money. Upgrade to use 2 fingers.",
+                "cost": "100",
+                "bonuses": {
+                  "self-mult": "1"
+                }
+              },
+              {
+                "desc": "You are now clicking with 2 fingers! How about you try using 3...",
+                "cost": "750",
+                "bonuses": {
+                  "self-mult": "2"
+                }
+              },
+              {
+                "desc": "You are now clicking with 3 fingers! What about 5?",
+                "cost": "2500",
+                "bonuses": {
+                  "self-mult": "3"
+                }
+              },
+              {
+                "desc": "You are now clicking with 5 fingers! What about 10?",
+                "cost": "10000",
+                "bonuses": {
+                  "self-mult": "5"
+                }
+              },
+              {
+                "desc": "You are now clicking with 10 fingers!",
+                "cost": "0",
+                "bonuses": {
+                  "self-mult": "10"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Basic Auto Clicker",
+        "bonusType": "second",
+        "bonus": "0.1",
+        "cost": "5",
+        "costMult": 1.006,
+        "upgrades": [
+          {
+            "name": "Increased Speed",
+            "level": 0,
+            "levels": [
+              {
+                "desc": "You realize that you can speed up the auto clicker to 2x as fast.",
+                "cost": "100",
+                "bonuses": {
+                  "self-mult": "1"
+                }
+              },
+              {
+                "desc": "Success! Your autoclicker is 2x as fast. What about 3x?",
+                "cost": "1000",
+                "bonuses": {
+                  "self-mult": "2"
+                }
+              },
+                {
+                "desc": "Nice! How about trying 5x as fast?",
+                "cost": "5000",
+                "bonuses": {
+                  "self-mult": "3"
+                }
+              },
+                {
+                "desc": "Great! How about trying 10x as fast?",
+                "cost": "25000",
+                "bonuses": {
+                  "self-mult": "5"
+                }
+              },
+                {
+                "desc": "Amazing! How about trying 25x as fast?",
+                "cost": "100000",
+                "bonuses": {
+                  "self-mult": "10"
+                }
+              },
+                {
+                "desc": "Awesome! How about trying 100x as fast?",
+                "cost": "1000000",
+                "bonuses": {
+                  "self-mult": "25"
+                }
+              },
+              {
+                "desc": "Superb! Your autoclicker is 100x as fast now.",
+                "cost": "0",
+                "bonuses": {
+                  "self-mult": "100"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+</template>
+<!-- partial -->
+  <script src='https://cdn.rawgit.com/MikeMcl/bignumber.js/master/bignumber.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.sound.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
